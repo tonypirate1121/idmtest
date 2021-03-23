@@ -1,0 +1,30 @@
+{
+
+    "enabled" : true,
+    "type" : "simple",
+    "repeatInterval" : 60000,
+    "persisted": true,
+    "concurrentExecution" : false,
+    "invokeService" : "taskscanner",
+    "invokeContext" : {
+      "waitForCompletion" : false,
+      "numberOfThreads" : 5, 
+      "scan" : { 
+        "_queryFilter" : "((/repeat/date gt \"${Time.now}\"))",
+        "object" : "managed/user",
+        "taskState" : {
+          "started" : "/repeat/task-started",
+          "completed" : "/repeat/task-completed"
+        },
+        "recovery" : {
+          "timeout" : "3m"
+        }
+      },
+      "task" : {
+        "script" : {
+          "type" : "text/javascript",
+          "file" : "script/repeattest.js"
+        }
+      }
+    }
+  }
