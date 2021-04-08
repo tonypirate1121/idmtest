@@ -1,5 +1,5 @@
 # what can do
-This project can send soap call to the a soap client whos password just update.
+This project can send soap call to the a soap client when user password just update.
 
 # How to use
 Please put groovy file under openidm/script and json file under openidm/conf.
