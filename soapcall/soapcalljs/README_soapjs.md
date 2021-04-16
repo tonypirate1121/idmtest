@@ -1,0 +1,1 @@
+ForgeRock IDM can not send soap call via js. IDM dont have library to do that.
